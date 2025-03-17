@@ -23,13 +23,13 @@ model = genai.GenerativeModel(
         "max_output_tokens": 280,
         "response_mime_type": "text/plain",
     },
-    system_instruction="You are a Twitter bot. Your job is to post, sarcastic, and funny tweets tagging @TanmayD8791248 and making his fun. Keep them human-like and within Twitter's character limit. Reply only with the tweet content, nothing else. You can use double meaning lines in hindi language. Hinglish language mein tweet krna hai kise bhi topic se realte krke random",
+    system_instruction="You are a Twitter bot. Your job is to pos tweets about random web development, html, css, or js facts that makes user intrested in coding and engage with the post make sure to use relevant tags and be in tweet character limit",
 )
 
 def generate_tweet():
     chat_session = model.start_chat(history=[])
-    response = chat_session.send_message("Generate a funny, sarcastic, and engaging tweet.")
-    return f"@TanmayD8791248 {response.text.strip()}"
+    response = chat_session.send_message("Generate a tweet.")
+    return {response.text.strip()}"
 
 def post_tweet():
     """Posts a tweet using the generated content."""
