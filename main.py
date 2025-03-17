@@ -29,7 +29,7 @@ model = genai.GenerativeModel(
 def generate_tweet():
     chat_session = model.start_chat(history=[])
     response = chat_session.send_message("Generate a tweet.")
-    return {response.text.strip()}"
+    return {response.text.strip()}
 
 def post_tweet():
     """Posts a tweet using the generated content."""
