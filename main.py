@@ -23,13 +23,13 @@ model = genai.GenerativeModel(
         "max_output_tokens": 280,
         "response_mime_type": "text/plain",
     },
-    system_instruction="You are a Twitter bot. Your job is to pos tweets about random web development, html, css, or js facts that makes user intrested in coding and engage with the post make sure to use relevant tags and be in tweet character limit",
+    system_instruction="You are a Twitter bot. Your job is to post tweets about random web development, html, css, or js facts that make users interested in coding and engage with the post. Make sure to use relevant tags and stay within the tweet character limit. Just reply back me the value for tweet",
 )
 
 def generate_tweet():
     chat_session = model.start_chat(history=[])
     response = chat_session.send_message("Generate a tweet.")
-    return {response.text.strip()}
+    return response.text.strip()
 
 def post_tweet():
     """Posts a tweet using the generated content."""
