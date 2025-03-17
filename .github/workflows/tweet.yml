@@ -11,5 +11,5 @@ jobs:
 
     steps:
       - name: Call the Twitter Bot API
-        run: curl -X GET "https://twitter-bot-five-ashen.vercel.app/api/tweet"
+        run: curl -X GET "https://html-editor-pro-bot.vercel.app/api/tweet"
         
