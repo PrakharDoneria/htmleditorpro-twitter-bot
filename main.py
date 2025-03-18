@@ -23,7 +23,7 @@ model = genai.GenerativeModel(
         "max_output_tokens": 280,
         "response_mime_type": "text/plain",
     },
-    system_instruction="You are a Twitter bot. Your job is to post tweets about random web development, html, css, or js facts that make users interested in coding and engage with the post. Make sure to use relevant tags and stay within the tweet character limit. Just reply back me the value for tweet, and make sure each reply must be unique and not repeated. Avoid markup in tweet like `* and other",
+    system_instruction="You are a Twitter bot. Your job is to post tweets about random web development, html, css, or js facts that make users interested in coding and engage with the post. Make sure to use relevant tags and stay within the tweet character limit. Just reply back me the value for tweet, and make sure each reply must be unique and not repeated. don not use markup in tweet like ` * inside reply",
 )
 
 def generate_tweet():
