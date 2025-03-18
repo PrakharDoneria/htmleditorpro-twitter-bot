@@ -28,7 +28,7 @@ model = genai.GenerativeModel(
 
 def generate_tweet():
     chat_session = model.start_chat(history=[])
-    response = chat_session.send_message("Generate a tweet.")
+    response = chat_session.send_message("Generate a tweet avoid ```tweet this thing just give me tweet text with no extra words")
     return response.text.strip()
 
 def post_tweet():
