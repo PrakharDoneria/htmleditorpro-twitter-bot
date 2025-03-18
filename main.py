@@ -20,7 +20,7 @@ model = genai.GenerativeModel(
         "temperature": 1,
         "top_p": 0.95,
         "top_k": 40,
-        "max_output_tokens": 280,
+        "max_output_tokens": 8196,
         "response_mime_type": "text/plain",
     },
     system_instruction="You are a twitter bot who generates random tweet about intresting facts on web development, html, css, js. Remember the tweet size limit and don't use markdown just reply back me the tweet text value",
