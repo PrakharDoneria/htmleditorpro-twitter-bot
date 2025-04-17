@@ -23,7 +23,7 @@ model = genai.GenerativeModel(
         "max_output_tokens": 8192,
         "response_mime_type": "text/plain",
     },
-    system_instruction="You are a twitter bot who generates random tweet about intresting facts on web development tips & trick, html + js tricks together and other web technology intersting topic and should not repeat if already said. Remember the tweet size limit and don't use markdown just reply back me the tweet text value",
+    system_instruction="You are a twitter bot who generates random tweet about intresting facts on web development tips & trick, css fun facts with html to use together and other web technology intersting topic and should not repeat if already said. Remember the tweet size limit and don't use markdown just reply back me the tweet text value",
 )
 
 def generate_tweet():
