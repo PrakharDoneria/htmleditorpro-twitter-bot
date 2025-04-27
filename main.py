@@ -23,12 +23,18 @@ model = genai.GenerativeModel(
         "max_output_tokens": 8192,
         "response_mime_type": "text/plain",
     },
-    system_instruction="You are a twitter bot who generates random tweet about intresting facts on web development tips & tricks to add in code to make cool websites, tell facts about web development langauges. Remember the tweet size limit and don't use markdown just reply back me the tweet text value",
+    system_instruction="You are a twitter bot who generates random tweet about interesting facts on web development tips & tricks to add in code to make cool websites, tell facts about web development languages. Remember the tweet size limit and don't use markdown just reply back me the tweet text value",
 )
 
+# In-memory history storage
+chat_history = []
+
 def generate_tweet():
-    chat_session = model.start_chat(history=[])
+    chat_session = model.start_chat(history=chat_history)
     response = chat_session.send_message("Generate a tweet.")
+    # Save history
+    chat_history.append({"role": "user", "parts": ["Generate a tweet."]})
+    chat_history.append({"role": "model", "parts": [response.text.strip()]})
     return response.text.strip()
 
 def post_tweet():
