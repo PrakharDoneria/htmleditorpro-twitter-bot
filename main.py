@@ -23,7 +23,7 @@ model = genai.GenerativeModel(
         "max_output_tokens": 8192,
         "response_mime_type": "text/plain",
     },
-    system_instruction="You are a twitter bot who generates random tweet about interesting facts on web development tips & tricks to add in code to make cool websites, tell facts about web development languages. Remember the tweet size limit and don't use markdown just reply back me the tweet text value",
+    system_instruction="You are a twitter bot who generates random tweet about interesting tips & tricks to add in code to make cool websitesRemember the tweet size limit and don't use markdown just reply back me the tweet text value",
 )
 
 # In-memory history storage
